@@ -6,6 +6,8 @@ public class RocketCTRL : MonoBehaviour
 {
     public float Speed = 5f;
     private Transform tr;
+    public Transform firePos;
+    public GameObject bulletPrefab;
     void Start()
     {
         tr = GetComponent<Transform>();
@@ -107,5 +109,10 @@ public class RocketCTRL : MonoBehaviour
                 tr.Translate(moveDir * sensitivity * Speed * Time.deltaTime);
             }
         }
+    }
+
+    public void Fire()
+    {
+        Instantiate(bulletPrefab, firePos.position, Quaternion.identity);
     }
 }

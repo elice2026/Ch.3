@@ -56,3 +56,6 @@ TagManager:
   - name: ASTEROID
     uniqueID: 509403723
     locked: 0
+  - name: BULLET
+    uniqueID: 3337552777
+    locked: 0

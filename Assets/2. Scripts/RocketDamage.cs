@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RocketDamage : MonoBehaviour
 {
@@ -30,6 +31,11 @@ public class RocketDamage : MonoBehaviour
             hp -= damage;
             hp = Mathf.Clamp(hp, 0, hpInit);
             HpBar.fillAmount = (float)hp / hpInit;
+
+            if(hp <= 0)
+            {
+                SceneManager.LoadScene("EndScene");
+            }
         }
     }
 }
